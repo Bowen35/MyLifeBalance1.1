@@ -146,7 +146,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private void displayQuizQuestions(){
         if(allQuestions != null){
-            unsetRadioButton();
+            radioGroup.clearCheck();  //I chaned this line from a method that removed the highlight to one that cleared the radiogroup
             int currentQuestion = questionCount + 1;
             questionNumber.setText("Question " + currentQuestion);
             question.setText(allQuestions.getQuestion());
@@ -161,12 +161,6 @@ public class MainQuizActivity extends AppCompatActivity {
         }
     }
 
-    private void unsetRadioButton(){
-        optionOne.setChecked(false);
-        optionTwo.setChecked(false);
-        optionThree.setChecked(false);
-        optionFour.setChecked(false);
-    }
 
     private String selectedAnswerOption(int id){
         String textContent = "";
