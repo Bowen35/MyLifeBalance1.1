@@ -39,4 +39,4 @@ public class MainActivity extends AppCompatActivity {
         }, SPLASH_DISPLAY_LENGTH);
     }
 }
-//Hi guys, if you can see this it has worked
+//Hi guys, if you can see this it worked
