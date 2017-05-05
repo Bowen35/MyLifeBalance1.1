@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="@dimen/_24sdp"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -70,20 +71,20 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/retake_quiz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/icons"
-        android:text="@string/retake_quiz"
-        android:layout_marginTop="@dimen/_80sdp"
-        android:background="@color/colorPrimaryDark"/>
-
-    <Button
         android:id="@+id/view_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/icons"
         android:text="@string/view_result"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/retake_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/icons"
+        android:text="@string/retake_quiz"
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@color/colorPrimaryDark"/>
 

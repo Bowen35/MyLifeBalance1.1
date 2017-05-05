@@ -12,14 +12,16 @@
     <string name="question">What is the highest mountain in the world right now?</string>
     <string name="everest">Mount Everest</string>
     <string name="next_button">NEXT QUESTION</string>
+    <string name="prev_button">PREV QUESTION</string>
     <string name="pass">PASS</string>
     <string name="fail">FAIL</string>
     <string name="quiz_result">Quiz Result</string>
-    <string name="retake_quiz">Retake quiz</string>
+    <string name="retake_quiz">Quiz Home</string>
     <string name="view_result">View result</string>
     <string name="question_num">Question 12</string>
     <string name="your_answer">Your answer</string>
     <string name="correct_answer">Correct answer</string>
     <string name="quiz_result_analysis">Quiz Result Analysis</string>
     <string name="no_quiz_in_category">There is no quiz in this category. Add a new quiz</string>
+    <string name="home_button">Quiz Home</string>
 </resources>

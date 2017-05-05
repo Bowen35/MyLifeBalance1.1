@@ -45,6 +45,8 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private Button nextQuestionButton;
 
+    private Button prevQuestionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -74,6 +76,8 @@ public class MainQuizActivity extends AppCompatActivity {
         quizObject = query.getQuizQuestionsById(quizCategoryId);
 
         nextQuestionButton = (Button)findViewById(R.id.next_quiz);
+
+        prevQuestionButton = (Button)findViewById(R.id.prev_quiz);
 
         if(quizObject.size() > 0){
             totalQuizCount = quizObject.size();
@@ -134,6 +138,7 @@ public class MainQuizActivity extends AppCompatActivity {
                     }
                 }
             });
+
         }else{
             optionOne.setVisibility(View.GONE);
             optionTwo.setVisibility(View.GONE);
@@ -146,7 +151,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private void displayQuizQuestions(){
         if(allQuestions != null){
-            radioGroup.clearCheck();  //I chaned this line from a method that removed the highlight to one that cleared the radiogroup
+            radioGroup.clearCheck();  //I changed this line from a method that removed the highlight to one that cleared the radiogroup
             int currentQuestion = questionCount + 1;
             questionNumber.setText("Question " + currentQuestion);
             question.setText(allQuestions.getQuestion());
@@ -160,6 +165,7 @@ public class MainQuizActivity extends AppCompatActivity {
             optionFour.setText(allAnswerOptions[3]);
         }
     }
+
 
 
     private String selectedAnswerOption(int id){

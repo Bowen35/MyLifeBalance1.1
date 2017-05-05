@@ -79,6 +79,25 @@
             android:textColor="@color/colorPrimaryText"/>
 
     </RadioGroup>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    style="?android:attr/buttonBarStyle">
+
+    <Button
+        android:id="@+id/prev_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prev_button"
+        android:textColor="@color/icons"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_marginRight="@dimen/_10sdp" />
 
     <Button
         android:id="@+id/next_quiz"
@@ -86,9 +105,14 @@
         android:layout_height="wrap_content"
         android:text="@string/next_button"
         android:textColor="@color/icons"
-        android:layout_gravity="right"
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/_40sdp"
         android:background="@color/colorPrimaryDark"
-        android:padding="@dimen/_16sdp"/>
-    
+        android:padding="@dimen/_16sdp"
+        style="?android:attr/buttonBarButtonStyle"
+         />
+
+
+</LinearLayout>
+
 </LinearLayout>
