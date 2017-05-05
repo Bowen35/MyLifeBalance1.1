@@ -139,6 +139,28 @@ public class MainQuizActivity extends AppCompatActivity {
                 }
             });
 
+            assert prevQuestionButton != null;
+            prevQuestionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   // Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
+                    questionCount --;
+
+                    // check if there is less questions
+                    if(questionCount < 0){
+                        // Quiz over
+                        Intent quizOverIntent = new Intent(MainQuizActivity.this, QuizCategoryActivity.class);
+
+                        startActivity(quizOverIntent);
+
+                    }else {
+                        // display new questions
+                        allQuestions = quizObject.get(questionCount);
+                        displayQuizQuestions();
+                    }
+                }
+                });
+
         }else{
             optionOne.setVisibility(View.GONE);
             optionTwo.setVisibility(View.GONE);
