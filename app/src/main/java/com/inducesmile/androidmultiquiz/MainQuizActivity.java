@@ -96,7 +96,7 @@ public class MainQuizActivity extends AppCompatActivity {
                     }else{
                         //check for the correct answer
                         Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
-                        if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){
+                        if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
                             //set new score
                             mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
                             //set the result
