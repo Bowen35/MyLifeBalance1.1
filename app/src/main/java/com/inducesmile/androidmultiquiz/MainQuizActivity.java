@@ -117,7 +117,7 @@ public class MainQuizActivity extends AppCompatActivity {
                             final String scoreString = gson.toJson(mScore);
                             quizOverIntent.putExtra("RESULT_OBJECT", scoreString);
 
-                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ; // change this 100 to 20
+                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ; // change this to = ((m.score.getscore() * 25) / totalQuizCount) - 25 ;
                             quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
 
                             // compare score and save
