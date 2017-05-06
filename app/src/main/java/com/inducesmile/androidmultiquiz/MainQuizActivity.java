@@ -98,7 +98,7 @@ public class MainQuizActivity extends AppCompatActivity {
                         Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
                         if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){
                             //set new score
-                            mScore.setScore(1);
+                            mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
                             //set the result
                             mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer, allQuestions.getAnswer(), true));
                         }else{
@@ -117,7 +117,7 @@ public class MainQuizActivity extends AppCompatActivity {
                             final String scoreString = gson.toJson(mScore);
                             quizOverIntent.putExtra("RESULT_OBJECT", scoreString);
 
-                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ;
+                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ; // change this 100 to 20
                             quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
 
                             // compare score and save
