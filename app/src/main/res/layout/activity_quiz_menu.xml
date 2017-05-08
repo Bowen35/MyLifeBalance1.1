@@ -19,37 +19,36 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/start_quiz_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:background="@color/colorPrimaryDark"
-            android:textColor="@color/icons"
+            android:padding="@dimen/_16sdp"
             android:text="@string/select_quiz"
-            android:textSize="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_24sdp"/>
+            android:textColor="@color/icons"
+            android:textSize="@dimen/_16sdp" />
 
         <Button
             android:id="@+id/quiz_instruction_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:background="@color/colorPrimaryDark"
-            android:textColor="@color/icons"
+            android:padding="@dimen/_16sdp"
             android:text="@string/quiz_instruction"
-            android:textSize="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_24sdp"/>
+            android:textColor="@color/icons"
+            android:textSize="@dimen/_16sdp" />
 
         <Button
             android:id="@+id/quiz_score_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
             android:background="@color/colorPrimaryDark"
-            android:textColor="@color/icons"
+            android:padding="@dimen/_16sdp"
             android:text="@string/your_best_score"
-            android:textSize="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_24sdp"/>
+            android:textColor="@color/icons"
+            android:textSize="@dimen/_16sdp" />
 
     </LinearLayout>
 

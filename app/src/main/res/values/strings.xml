@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">My Life Balance</string>
     <string name="quiz_slogan">Enhancing your life</string>
-    <string name="select_quiz">SELECT QUIZ</string>
-    <string name="quiz_instruction">QUIZ INSTRUCTION</string>
-    <string name="your_best_score">YOUR BEST SCORE</string>
+    <string name="select_quiz">Select a Quiz</string>
+    <string name="quiz_instruction">Quiz Instructions</string>
+    <string name="your_best_score">Your Best Score</string>
     <string name="quiz_user_score_table">QUIZ TOP SCORERS</string>
     <string name="total_best_score">93%</string>
     <string name="quiz_category">Quiz Category</string>
