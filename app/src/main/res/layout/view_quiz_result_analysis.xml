@@ -60,15 +60,6 @@
             android:text="@string/your_answer"
             android:layout_marginTop="@dimen/_16sdp"/>
 
-        <TextView
-            android:id="@+id/correct_answer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_14sdp"
-            android:textStyle="bold"
-            android:textColor="@color/colorAccent"
-            android:text="@string/correct_answer"
-            android:layout_marginTop="@dimen/_16sdp"/>
 
 
     </LinearLayout>

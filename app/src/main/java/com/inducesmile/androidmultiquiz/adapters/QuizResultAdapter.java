@@ -42,12 +42,7 @@ public class QuizResultAdapter extends RecyclerView.Adapter<QuizResultViewHolder
             holder.questionNum.setText("QUESTION " + resultData.getQuestionNumber());
             holder.mainQuestion.setText(resultData.getQuestionTitle().trim());
             holder.yourAnswer.setText("Your answer: " + resultData.getSelectedAnswer().trim());
-            holder.correctAnswer.setText("Correct answer: " + resultData.getCollectAnswer().trim());
-            if(resultData.isCorrect()){
-                holder.imageMark.setImageResource(R.drawable.goodmark);
-            }else{
-                holder.imageMark.setImageResource(R.drawable.badmark);
-            }
+
         }else{
             Toast.makeText(context, "Error!! Quiz result analysis missing", Toast.LENGTH_LONG).show();
         }

@@ -31,7 +31,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
 
-    private RadioButton optionOne, optionTwo, optionThree, optionFour;
+    private RadioButton optionOne, optionTwo, optionThree, optionFour, optionFive;
 
     private List<QuestionObject> quizObject;
 
@@ -45,7 +45,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
     private Button nextQuestionButton;
 
-    private Button prevQuestionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class MainQuizActivity extends AppCompatActivity {
         optionTwo = (RadioButton)findViewById(R.id.answer_two);
         optionThree = (RadioButton)findViewById(R.id.answer_three);
         optionFour = (RadioButton)findViewById(R.id.answer_four);
+        optionFive = (RadioButton)findViewById(R.id.answer_five);
 
         int quizCategoryId = getIntent().getExtras().getInt("QUIZ_CATEGORY_ID");
         DatabaseQuery query = new DatabaseQuery(MainQuizActivity.this);
@@ -77,7 +78,7 @@ public class MainQuizActivity extends AppCompatActivity {
 
         nextQuestionButton = (Button)findViewById(R.id.next_quiz);
 
-        prevQuestionButton = (Button)findViewById(R.id.prev_quiz);
+
 
         if(quizObject.size() > 0){
             totalQuizCount = quizObject.size();
@@ -95,15 +96,33 @@ public class MainQuizActivity extends AppCompatActivity {
                         Toast.makeText(MainQuizActivity.this, "You must select an answer " + userSelectedAnswer, Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
-                        Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
-                        if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){
+                      //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
+                      //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
                             //set new score
-                            mScore.setScore(1);
+                      //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
+                            int id=radioGroup.getCheckedRadioButtonId();
+                                switch(id){
+                                    case R.id.answer_one:
+                                        mScore.setScore(1);
+                                        break;
+                                    case R.id.answer_two:
+                                        mScore.setScore(2);
+                                        break;
+                                    case R.id.answer_three:
+                                        mScore.setScore(3);
+                                        break;
+                                    case R.id.answer_four:
+                                        mScore.setScore(4);
+                                        break;
+                                    case R.id.answer_five:
+                                        mScore.setScore(5);
+                                        break;
+
+                                }
                             //set the result
-                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer, allQuestions.getAnswer(), true));
-                        }else{
-                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer, allQuestions.getAnswer(), false));
-                        }
+                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer));
+
+
                         Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
                         questionCount++;
 
@@ -117,7 +136,7 @@ public class MainQuizActivity extends AppCompatActivity {
                             final String scoreString = gson.toJson(mScore);
                             quizOverIntent.putExtra("RESULT_OBJECT", scoreString);
 
-                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ;
+                            double percentageScore = ((mScore.getScore() * 25) / totalQuizCount) - 25 ;
                             quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
 
                             // compare score and save
@@ -139,32 +158,14 @@ public class MainQuizActivity extends AppCompatActivity {
                 }
             });
 
-            assert prevQuestionButton != null;
-            prevQuestionButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    questionCount --;
 
-                    // check if there is less questions
-                    if(questionCount < 0){
-                        // Quiz under
-                        Intent quizOverIntent = new Intent(MainQuizActivity.this, QuizCategoryActivity.class);
-
-                        startActivity(quizOverIntent);
-
-                    }else {
-                        // display prev: questions
-                        allQuestions = quizObject.get(questionCount);
-                        displayQuizQuestions();
-                    }
-                }
-                });
 
         }else{
             optionOne.setVisibility(View.GONE);
             optionTwo.setVisibility(View.GONE);
             optionThree.setVisibility(View.GONE);
             optionFour.setVisibility(View.GONE);
+            optionFive.setVisibility(View.GONE);
             nextQuestionButton.setVisibility(View.GONE);
             Toast.makeText(MainQuizActivity.this, getString(R.string.no_quiz_in_category), Toast.LENGTH_LONG).show();
         }
@@ -184,6 +185,7 @@ public class MainQuizActivity extends AppCompatActivity {
             optionTwo.setText(allAnswerOptions[1]);
             optionThree.setText(allAnswerOptions[2]);
             optionFour.setText(allAnswerOptions[3]);
+            optionFive.setText(allAnswerOptions[4]);
         }
     }
 
@@ -202,6 +204,9 @@ public class MainQuizActivity extends AppCompatActivity {
         }
         if(id == R.id.answer_four){
             textContent = optionFour.getText().toString();
+        }
+        if(id == R.id.answer_five){
+            textContent = optionFive.getText().toString();
         }
         return textContent;
     }
