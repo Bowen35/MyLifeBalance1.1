@@ -19,10 +19,11 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/start_quiz_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_24sdp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/button_selector"
             android:padding="@dimen/_16sdp"
             android:text="@string/select_quiz"
             android:textColor="@color/icons"
@@ -33,20 +34,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_24sdp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/button_selector"
             android:padding="@dimen/_16sdp"
             android:text="@string/quiz_instruction"
             android:textColor="@color/icons"
             android:textSize="@dimen/_16sdp" />
 
         <Button
-            android:id="@+id/quiz_score_button"
+            android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_24sdp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/button_selector"
             android:padding="@dimen/_16sdp"
-            android:text="@string/your_best_score"
+            android:text="@string/register"
+            android:textColor="@color/icons"
+            android:textSize="@dimen/_16sdp" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/button_selector"
+            android:padding="@dimen/_16sdp"
+            android:text="@string/sign_in"
             android:textColor="@color/icons"
             android:textSize="@dimen/_16sdp" />
 

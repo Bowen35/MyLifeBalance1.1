@@ -46,14 +46,14 @@ public class QuizMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button bestQuiz = (Button)findViewById(R.id.quiz_score_button);
-        assert bestQuiz != null;
-        bestQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent bestScoreIntent = new Intent(QuizMenuActivity.this, BestScoreActivity.class);
-                startActivity(bestScoreIntent);
-            }
-        });
+//        Button bestQuiz = (Button)findViewById(R.id.quiz_score_button);
+//        assert bestQuiz != null;
+//        bestQuiz.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent bestScoreIntent = new Intent(QuizMenuActivity.this, BestScoreActivity.class);
+//                startActivity(bestScoreIntent);
+//            }
+//        });
     }
 }
