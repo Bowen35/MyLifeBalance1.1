@@ -21,10 +21,10 @@ public class QuizMenuActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        ActionBar actionBar = getSupportActionBar();
-        if(null != actionBar){
-            actionBar.hide();
-        }
+//        ActionBar actionBar = getSupportActionBar();
+//        if(null != actionBar){
+//            actionBar.hide();
+//        }
 
         Button selectQuiz = (Button)findViewById(R.id.start_quiz_button);
         assert selectQuiz != null;
