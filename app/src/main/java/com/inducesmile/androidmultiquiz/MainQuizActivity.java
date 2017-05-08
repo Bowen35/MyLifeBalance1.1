@@ -96,34 +96,33 @@ public class MainQuizActivity extends AppCompatActivity {
                         Toast.makeText(MainQuizActivity.this, "You must select an answer " + userSelectedAnswer, Toast.LENGTH_LONG).show();
                     }else{
                         //check for the correct answer
-                        Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
-                        if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
+                      //  Log.d(TAG, "Match answers " + allQuestions.getAnswer() + " select " + userSelectedAnswer);
+                      //  if(allQuestions.getAnswer().trim().equals(userSelectedAnswer.trim())){ //wont need a lot of this
                             //set new score
-                            mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
-                            //intid=radioGroup.getCheckedRadioButtonId();
-                                //switch(id){
-                                    //caseR.id.answer_one:
-                                        //mScore.setScore(1);
-                                        //break;
-                                    //caseR.id.answer_two:
-                                        //mScore.setScore(2);
-                                        //break;
-                                    //caseR.id.answer_three:
-                                        //mScore.setScore(3);
-                                        //break;
-                                    //caseR.id.answer_four:
-                                        //mScore.setScore(4);
-                                        //break;
-                                    //caseR.id.answer_five:
-                                        //mScore.setScore(5);
-                                        //break;
+                      //      mScore.setScore(1); //radiobutton 1 with be worth 1, radiobutton 2 will be worth 2 and so on
+                            int id=radioGroup.getCheckedRadioButtonId();
+                                switch(id){
+                                    case R.id.answer_one:
+                                        mScore.setScore(1);
+                                        break;
+                                    case R.id.answer_two:
+                                        mScore.setScore(2);
+                                        break;
+                                    case R.id.answer_three:
+                                        mScore.setScore(3);
+                                        break;
+                                    case R.id.answer_four:
+                                        mScore.setScore(4);
+                                        break;
+                                    case R.id.answer_five:
+                                        mScore.setScore(5);
+                                        break;
 
-                                //}
+                                }
                             //set the result
-                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer, allQuestions.getAnswer(), true));
-                        }else{
-                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer, allQuestions.getAnswer(), false));
-                        }
+                            mScore.addNewQuizResult(new ResultObject(""+allQuestions.getId(), allQuestions.getQuestion(), userSelectedAnswer));
+
+
                         Log.d(TAG, "Quiz Result " + mScore.getQuizResultObject().size());
                         questionCount++;
 
@@ -137,7 +136,7 @@ public class MainQuizActivity extends AppCompatActivity {
                             final String scoreString = gson.toJson(mScore);
                             quizOverIntent.putExtra("RESULT_OBJECT", scoreString);
 
-                            double percentageScore = (mScore.getScore() * 100) / totalQuizCount ; // change this to = ((m.score.getscore() * 25) / totalQuizCount) - 25 ;
+                            double percentageScore = ((mScore.getScore() * 25) / totalQuizCount) - 25 ;
                             quizOverIntent.putExtra("TOTAL_SCORE", String.valueOf(percentageScore));
 
                             // compare score and save
