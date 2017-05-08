@@ -26,12 +26,8 @@ public class QuizResultActivity extends AppCompatActivity {
         int userPassMark = new Double(passResult).intValue();
 
         CircleView userPassScore = (CircleView)findViewById(R.id.pass);
-        CircleView userFailedScore = (CircleView)findViewById(R.id.fail);
-
-        int failedScore = 100 - userPassMark;
 
         userPassScore.setTitleText(String.valueOf(userPassMark) + "%");
-        userFailedScore.setTitleText(String.valueOf(failedScore) + "%");
 
         Button retakeQuizButton = (Button)findViewById(R.id.retake_quiz);
         assert retakeQuizButton != null;

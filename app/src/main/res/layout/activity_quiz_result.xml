@@ -44,29 +44,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
 
-            <com.github.pavlospt.CircleView
-                android:id="@+id/fail"
-                android:layout_width="@dimen/_120sdp"
-                android:layout_height="@dimen/_120sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                app:cv_titleSubtitleSpace="40"
-                app:cv_fillColor="@color/colorSecondaryText"
-                app:cv_strokeColorValue="@color/colorPrimaryDark"
-                app:cv_backgroundColorValue="@color/colorPrimaryDark"
-                app:cv_titleColor="@color/colorPrimary"
-                app:cv_titleSize="@dimen/_30sdp"
-                app:cv_titleText="@string/total_best_score"
-                app:cv_subtitleSize="@dimen/_14sdp"
-                app:cv_subtitleText="@string/fail"
-                android:layout_gravity="center_horizontal"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 

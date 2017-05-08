@@ -42,7 +42,7 @@ public class QuizResultAdapter extends RecyclerView.Adapter<QuizResultViewHolder
             holder.questionNum.setText("QUESTION " + resultData.getQuestionNumber());
             holder.mainQuestion.setText(resultData.getQuestionTitle().trim());
             holder.yourAnswer.setText("Your answer: " + resultData.getSelectedAnswer().trim());
-            
+
         }else{
             Toast.makeText(context, "Error!! Quiz result analysis missing", Toast.LENGTH_LONG).show();
         }
