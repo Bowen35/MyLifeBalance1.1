@@ -17,6 +17,7 @@
         android:layout_centerVertical="true"
         android:contentDescription="@string/app_name"
         android:src="@drawable/quizlogo"
+        android:padding="@dimen/_6sdp"
         android:layout_centerHorizontal="true"/>
 
     <TextView
