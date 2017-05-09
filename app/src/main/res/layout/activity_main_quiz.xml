@@ -105,7 +105,7 @@
         android:textColor="@color/icons"
         android:layout_weight="1"
         android:layout_marginTop="@dimen/_40sdp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button_selector"
         android:padding="@dimen/_16sdp"
         style="?android:attr/buttonBarButtonStyle"
     />

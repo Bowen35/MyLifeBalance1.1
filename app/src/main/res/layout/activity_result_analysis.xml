@@ -25,7 +25,7 @@
         android:textColor="@color/icons"
         android:text="@string/home_button"
         android:layout_marginTop="@dimen/_5sdp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@drawable/button_selector" />
     </LinearLayout>
 
 </ScrollView>
