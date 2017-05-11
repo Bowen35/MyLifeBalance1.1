@@ -27,10 +27,11 @@
         <activity android:name=".MainQuizActivity" />
         <activity android:name=".QuizResultActivity" />
         <activity android:name=".ResultAnalysisActivity" />
-        <activity android:name=".SignInActivity" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".SignInActivity"></activity>
     </application>
 
 </manifest>

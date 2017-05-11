@@ -8,23 +8,22 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 
-public class SignInActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_register);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance</font>"));
 
-
-        Button register = (Button)findViewById(R.id.register_button);
-        assert register != null;
-        register.setOnClickListener(new View.OnClickListener() {
+        Button asGuest = (Button)findViewById(R.id.guest_button);
+        assert asGuest != null;
+        asGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quizCategoryIntent = new Intent(SignInActivity.this, RegisterActivity.class);
+                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
                 startActivity(quizCategoryIntent);
             }
         });

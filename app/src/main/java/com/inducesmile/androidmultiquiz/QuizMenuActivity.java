@@ -15,17 +15,14 @@ public class QuizMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_menu);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ActionBar actionBar = getSupportActionBar();
-//        if(null != actionBar){
-//            actionBar.hide();
-//        }
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance</font>"));
 
         Button selectQuiz = (Button)findViewById(R.id.start_quiz_button);
@@ -48,14 +45,24 @@ public class QuizMenuActivity extends AppCompatActivity {
             }
         });
 
-//        Button bestQuiz = (Button)findViewById(R.id.quiz_score_button);
-//        assert bestQuiz != null;
-//        bestQuiz.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent bestScoreIntent = new Intent(QuizMenuActivity.this, BestScoreActivity.class);
-//                startActivity(bestScoreIntent);
-//            }
-//        });
+        Button register = (Button)findViewById(R.id.register_button);
+        assert register != null;
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent instructionIntent = new Intent(QuizMenuActivity.this, RegisterActivity.class);
+                startActivity(instructionIntent);
+            }
+        });
+
+        Button signIn = (Button)findViewById(R.id.sign_in_button);
+        assert signIn != null;
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent instructionIntent = new Intent(QuizMenuActivity.this, SignInActivity.class);
+                startActivity(instructionIntent);
+            }
+        });
     }
 }

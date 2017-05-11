@@ -25,10 +25,24 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/email_login_form"
+            android:id="@+id/register_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_name"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"/>
+
+            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -40,23 +54,9 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textSize="24sp" />
+                    android:maxLines="1"/>
 
             </android.support.design.widget.TextInputLayout>
-
-            <Button
-                android:id="@+id/email_sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_24sdp"
-                android:background="@drawable/button_selector"
-                android:letterSpacing="0.1"
-                android:padding="8dp"
-                android:text="@string/action_sign_in_short"
-                android:textAllCaps="false"
-                android:textColor="@color/pink"
-                android:textSize="@dimen/_16sdp" />
 
             <Button
                 android:id="@+id/register_button"
@@ -67,6 +67,19 @@
                 android:letterSpacing="0.1"
                 android:padding="8dp"
                 android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_16sdp" />
+
+            <Button
+                android:id="@+id/guest_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@drawable/button_selector"
+                android:letterSpacing="0.1"
+                android:padding="8dp"
+                android:text="@string/cont_guest"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/_16sdp" />
