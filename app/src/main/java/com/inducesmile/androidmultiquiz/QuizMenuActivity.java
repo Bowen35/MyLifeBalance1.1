@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.text.Html;
 
 public class QuizMenuActivity extends AppCompatActivity {
 
@@ -21,10 +22,11 @@ public class QuizMenuActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-//        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
 //        if(null != actionBar){
 //            actionBar.hide();
 //        }
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance</font>"));
 
         Button selectQuiz = (Button)findViewById(R.id.start_quiz_button);
         assert selectQuiz != null;

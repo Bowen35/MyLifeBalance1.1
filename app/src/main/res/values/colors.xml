@@ -8,4 +8,7 @@
     <color name="colorSecondaryText">#769abf</color>
     <color name="icons">#8f466f</color>
     <color name="divider">#BDBDBD</color>
+    <color name="pink">#e1c8d6</color>
+    <color name="purple">#8f466f</color>
+    <color name="blue">#769abf</color>
 </resources>

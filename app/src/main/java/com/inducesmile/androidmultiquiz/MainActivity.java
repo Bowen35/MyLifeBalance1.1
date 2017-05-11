@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
-                Intent startActivityIntent = new Intent(MainActivity.this, QuizMenuActivity.class);
+                Intent startActivityIntent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(startActivityIntent);
                 MainActivity.this.finish();
             }
