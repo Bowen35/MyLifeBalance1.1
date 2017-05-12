@@ -1,10 +1,13 @@
 package com.inducesmile.androidmultiquiz.database;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.inducesmile.androidmultiquiz.entities.CategoryObject;
+import com.inducesmile.androidmultiquiz.entities.Client;
 import com.inducesmile.androidmultiquiz.entities.QuestionObject;
 
 import java.util.ArrayList;
