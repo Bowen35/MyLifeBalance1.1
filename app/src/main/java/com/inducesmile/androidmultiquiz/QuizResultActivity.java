@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.pavlospt.CircleView;
+
+import org.w3c.dom.Text;
 
 public class QuizResultActivity extends AppCompatActivity {
 
@@ -28,6 +31,22 @@ public class QuizResultActivity extends AppCompatActivity {
         CircleView userPassScore = (CircleView)findViewById(R.id.pass);
 
         userPassScore.setTitleText(String.valueOf(userPassMark) + "%");
+
+        if(passResult < 25 && passResult >= 0) {
+            TextView result = (TextView) findViewById(R.id.resultText);
+            result.setText("You got less than 25 :(");
+        } else if (passResult >= 25 && passResult <= 49){
+            TextView result = (TextView) findViewById(R.id.resultText);
+            result.setText("You got less than 50 :|");
+        } else if (passResult >= 50 && passResult <= 74) {
+            TextView result = (TextView) findViewById(R.id.resultText);
+            result.setText("You got less than 75 :)");
+        }  else if (passResult >= 75 && passResult <= 100) {
+            TextView result = (TextView) findViewById(R.id.resultText);
+            result.setText("You got less than 100 :D");
+        } else {TextView result = (TextView) findViewById(R.id.resultText);
+            result.setText("There has been a mistake");
+        }
 
         Button retakeQuizButton = (Button)findViewById(R.id.retake_quiz);
         assert retakeQuizButton != null;
