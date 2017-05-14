@@ -65,6 +65,7 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
+                android:onClick="registerClient"
                 android:padding="8dp"
                 android:text="@string/register"
                 android:textAllCaps="false"
