@@ -34,7 +34,7 @@ public class QuizResultActivity extends AppCompatActivity {
 
         if(passResult < 25 && passResult >= 0) {
             TextView result = (TextView) findViewById(R.id.resultText);
-            result.setText("You got less than 25 :(");
+            result.setText("@string/less_than_20");
         } else if (passResult >= 25 && passResult <= 49){
             TextView result = (TextView) findViewById(R.id.resultText);
             result.setText("You got less than 50 :|");

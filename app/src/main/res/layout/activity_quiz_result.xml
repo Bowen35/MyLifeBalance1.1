@@ -46,7 +46,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/resultText"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginTop="@dimen/_5sdp"/>
 
         </LinearLayout>
 
