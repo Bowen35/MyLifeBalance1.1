@@ -60,9 +60,9 @@ public class RegisterActivity extends AppCompatActivity {
 //        Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
 //        startActivity(quizCategoryIntent);
 
-        DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
+        DBHandler dbHandler = new DBHandler(RegisterActivity.this);
         Client client = new Client(name.getText().toString(), email.getText().toString());
-        dbHandler.addClient(client);
+        dbHandler.addClient(RegisterActivity.this, client);
         Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
         startActivity(quizCategoryIntent);
     }

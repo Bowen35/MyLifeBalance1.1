@@ -21,8 +21,8 @@ public class DBHandler extends SQLiteAssetHelper {
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_EMAIL = "email";
 
-    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    public DBHandler(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
 //    @Override
@@ -36,11 +36,13 @@ public class DBHandler extends SQLiteAssetHelper {
 //        onCreate(db);
 //    }
 
-    public void addClient(Client client) {
+    public void addClient(Context context, Client client) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, client.getName());
         values.put(COLUMN_EMAIL, client.getEmail());
-        SQLiteDatabase db = this.getWritableDatabase();
+        DatabaseQuery dbQuery = new DatabaseQuery(context);
+        SQLiteDatabase db = dbQuery.getDbWrite();
+        //SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_CLIENT, null, values);
         db.close();
     }

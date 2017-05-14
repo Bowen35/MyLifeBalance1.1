@@ -61,7 +61,8 @@
         android:textColor="@color/icons"
         android:text="@string/view_result"
         android:layout_marginTop="@dimen/_80sdp"
-        android:background="@drawable/button_selector"/>
+        android:background="@drawable/button_selector"
+        android:padding="8dp"/>
 
     <Button
         android:id="@+id/retake_quiz"
@@ -70,6 +71,7 @@
         android:textColor="@color/icons"
         android:text="@string/retake_quiz"
         android:layout_marginTop="@dimen/_16sdp"
-        android:background="@drawable/button_selector"/>
+        android:background="@drawable/button_selector"
+        android:padding="8dp"/>
 
 </LinearLayout>
