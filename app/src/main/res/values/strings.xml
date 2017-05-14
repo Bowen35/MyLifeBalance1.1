@@ -45,4 +45,5 @@
     </string>
     <string name="cont_guest">Continue as Guest</string>
     <string name="prompt_name">Full Name</string>
+    <string name="welcome">Welcome!</string>
 </resources>

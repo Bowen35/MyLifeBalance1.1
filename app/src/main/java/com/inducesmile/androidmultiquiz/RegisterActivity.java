@@ -29,18 +29,18 @@ public class RegisterActivity extends AppCompatActivity {
         name = (AutoCompleteTextView) findViewById(R.id.name);
         email = (AutoCompleteTextView) findViewById(R.id.email);
 
-        Button register = (Button) findViewById(R.id.register_button);
-        assert register != null;
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseQuery dbQuery = new DatabaseQuery(RegisterActivity.this);
-                Client client = new Client(name.getText().toString(), email.getText().toString());
-                dbQuery.addClient(client);
-                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-                startActivity(quizCategoryIntent);
-            }
-        });
+//        Button register = (Button) findViewById(R.id.register_button);
+//        assert register != null;
+//        register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
+//                Client client = new Client(name.getText().toString(), email.getText().toString());
+//                dbHandler.addClient(client);
+//                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+//                startActivity(quizCategoryIntent);
+//            }
+//        });
 
         Button asGuest = (Button)findViewById(R.id.guest_button);
         assert asGuest != null;
@@ -53,10 +53,17 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-//    public void registerClient(View view){
-//        DBHandler dbHandler = new DBHandler(this, null, null, 1);
-//
-//        dbHandler.addClient(client);
-//
-//    }
+    public void registerClient(View view){
+//        DatabaseQuery dbQuery = new DatabaseQuery(RegisterActivity.this);
+//        Client client = new Client(name.getText().toString(), email.getText().toString());
+//        dbQuery.addClient(client);
+//        Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+//        startActivity(quizCategoryIntent);
+
+        DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
+        Client client = new Client(name.getText().toString(), email.getText().toString());
+        dbHandler.addClient(client);
+        Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+        startActivity(quizCategoryIntent);
+    }
 }

@@ -15,6 +15,10 @@ import java.util.List;
 
 public class DatabaseQuery extends DatabaseObject{
 
+    public static final String TABLE_CLIENTS = "clients";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_EMAIL = "email";
+
     public DatabaseQuery(Context context) {
         super(context);
     }
@@ -50,6 +54,16 @@ public class DatabaseQuery extends DatabaseObject{
         }
         cursor.close();
         return quizQuestionList;
+    }
+
+    //One attempting method of inserting into DB. DOESN'T WORK.
+    public void addClient(Client client) {
+//        String query = "INSERT INTO clients (name, email) VALUES ('" + client.getName() + "', '" + client.getEmail() + "');";
+//        this.getDbWrite().rawQuery(query, null);
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, client.getName());
+        values.put(COLUMN_EMAIL, client.getEmail());
+        this.getDbWrite().insert(TABLE_CLIENTS, null, values);
     }
 
     /*public List<FavouriteObject> getFavoriteNews(){
