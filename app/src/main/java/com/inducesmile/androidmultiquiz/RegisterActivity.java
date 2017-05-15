@@ -48,30 +48,31 @@ public class RegisterActivity extends AppCompatActivity {
 //            }
 //        });
 
-//        Button asGuest = (Button)findViewById(R.id.guest_button);
-//        assert asGuest != null;
-//        asGuest.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-//                startActivity(quizCategoryIntent);
-//            }
-//        });
+        Button asGuest = (Button)findViewById(R.id.guest_button);
+        assert asGuest != null;
+        asGuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                startActivity(quizCategoryIntent);
+            }
+        });
     }
 
     public void registerClient(View view){
         DBHandler DBhandler = new DBHandler(RegisterActivity.this, null, null, 1);
         Client client = new Client(name.getText().toString(), email.getText().toString());
+        //Doesn't work. Can't find clients table.
         DBhandler.addClient(client);
         Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
         startActivity(quizCategoryIntent);
     }
 
     public void findClients() {
-        DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
-        Client client = dbHandler.findAllClients();
-        if(client != null) {
-            thing.setText(String.valueOf(client.getEmail()));
-        }
+//        DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
+//        Client client = dbHandler.findAllClients();
+//        if(client != null) {
+//            thing.setText(String.valueOf(client.getEmail()));
+//        }
     }
 }
