@@ -34,16 +34,16 @@ public class QuizResultActivity extends AppCompatActivity {
 
         if(passResult < 25 && passResult >= 0) {
             TextView result = (TextView) findViewById(R.id.resultText);
-            result.setText("@string/less_than_20");
+            result.setText(getString(R.string.less_than_25));
         } else if (passResult >= 25 && passResult <= 49){
             TextView result = (TextView) findViewById(R.id.resultText);
-            result.setText("You got less than 50 :|");
+            result.setText(getString(R.string.less_than_50));
         } else if (passResult >= 50 && passResult <= 74) {
             TextView result = (TextView) findViewById(R.id.resultText);
-            result.setText("You got less than 75 :)");
+            result.setText(getString(R.string.less_than_75));
         }  else if (passResult >= 75 && passResult <= 100) {
             TextView result = (TextView) findViewById(R.id.resultText);
-            result.setText("You got less than 100 :D");
+            result.setText(getString(R.string.less_than_100));
         } else {TextView result = (TextView) findViewById(R.id.resultText);
             result.setText("There has been a mistake");
         }

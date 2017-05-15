@@ -30,7 +30,23 @@
     <string name="email_hint">some@one.com</string>
     <string name="password">Password</string>
     <string name="title_activity_login">Sign in</string>
-    <string name="less_than_20">Check</string>
+
+    <!-- Text responses -->
+    <string name="less_than_25">Life causes you immense pain. You feel confused most of the time. You have few friends and the people
+        you do associate with, likely share the same views of the world as you. Your focus is primarily on what you cannot control or
+        influence and thus you are left feeling constantly overwhelmed and out of control. You view life as a disappointment so far
+        and you allow the forces outside of yourself to dominate you. This is what we refer to as Level 3 living.</string>
+    <string name="less_than_50">You often find life confusing. You feel out of control and ask yourself ‘why me? “The world is scary
+        to you and you most likely blame others for your poor results. You tend to not take risks and stay in your comfort zone.
+        Change is difficult for you, you would like to live your life on a level 2 and have more control, but you tend to be in the
+        level 3 zone and that frustrates you.</string>
+    <string name="less_than_75">You have mixed results in your life and wonder if it is luck. You sometimes wonder what you are doing
+        wrong and how you can turn things around. You can be disappointed by people and events in the world. You are willing to take
+        some risks to change as long as you can see the benefits. You operate at level 2 but when things get confusing or frustrating
+        you digress to level 3.</string>
+    <string name="less_than_100">You have the belief that your reality is up to you. You hold yourself accountable for your world.
+        You are willing to learn new ways of doing things and regard challenges as learning opportunities. You enjoy life and what it presents.
+        You take yourself lightly, you live at level 1 most of the time and you are aware of when you are choosing not to.</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
