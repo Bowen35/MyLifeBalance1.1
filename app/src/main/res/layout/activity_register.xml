@@ -74,6 +74,7 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
+                android:onClick="registerClient"
                 android:padding="8dp"
                 android:text="@string/register"
                 android:textAllCaps="false"
@@ -87,11 +88,18 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
+                android:onClick="findClients"
                 android:padding="8dp"
                 android:text="@string/cont_guest"
                 android:textAllCaps="false"
                 android:textColor="@color/pink"
                 android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
         </LinearLayout>
     </ScrollView>
