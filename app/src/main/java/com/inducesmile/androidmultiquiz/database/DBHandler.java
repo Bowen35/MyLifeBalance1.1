@@ -42,7 +42,7 @@ public class DBHandler extends SQLiteAssetHelper {
         values.put(COLUMN_EMAIL, client.getEmail());
         DatabaseQuery dbQuery = new DatabaseQuery(context);
         SQLiteDatabase db = dbQuery.getDbWrite();
-        //SQLiteDatabase db = this.getWritableDatabase();
+//        SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_CLIENT, null, values);
         db.close();
     }

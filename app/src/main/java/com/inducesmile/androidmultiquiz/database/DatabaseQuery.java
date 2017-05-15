@@ -58,12 +58,14 @@ public class DatabaseQuery extends DatabaseObject{
 
     //One attempting method of inserting into DB. DOESN'T WORK.
     public void addClient(Client client) {
-//        String query = "INSERT INTO clients (name, email) VALUES ('" + client.getName() + "', '" + client.getEmail() + "');";
-//        this.getDbWrite().rawQuery(query, null);
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, client.getName());
-        values.put(COLUMN_EMAIL, client.getEmail());
-        this.getDbWrite().insert(TABLE_CLIENTS, null, values);
+        String query = "INSERT INTO `clients` (name, email) VALUES ('" + client.getName() +"','" + client.getEmail() + "')";
+        this.getDbWrite().rawQuery(query, null);
+//        ContentValues values = new ContentValues();
+//        values.put(COLUMN_NAME, client.getName());
+//        values.put(COLUMN_EMAIL, client.getEmail());
+//        SQLiteDatabase db = this.getDbWrite();
+//        db.insert(TABLE_CLIENTS, null, values);
+//        db.close();
     }
 
     /*public List<FavouriteObject> getFavoriteNews(){
