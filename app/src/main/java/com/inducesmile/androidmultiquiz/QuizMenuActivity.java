@@ -2,6 +2,7 @@ package com.inducesmile.androidmultiquiz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -62,6 +63,17 @@ public class QuizMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent instructionIntent = new Intent(QuizMenuActivity.this, SignInActivity.class);
                 startActivity(instructionIntent);
+            }
+        });
+
+        Button btnBrowse = (Button) findViewById(R.id.btnBrowser);
+        btnBrowse.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("http://eagles.ic1d.net.au/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
     }

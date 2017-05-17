@@ -32,9 +32,9 @@ public class QuizResultActivity extends AppCompatActivity {
         double passResult = Double.parseDouble(userScore);
         int userPassMark = new Double(passResult).intValue();
 
-        CircleView userPassScore = (CircleView)findViewById(R.id.pass);
+        //CircleView userPassScore = (CircleView)findViewById(R.id.pass);
 
-        userPassScore.setTitleText(String.valueOf(userPassMark) + "%");
+        //userPassScore.setTitleText(String.valueOf(userPassMark) + "%");
 
         if(passResult < 25 && passResult >= 0) {
             TextView result = (TextView) findViewById(R.id.resultText);

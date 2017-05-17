@@ -29,11 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance</font>"));
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance | Register</font>"));
 
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);
-        thing = (TextView) findViewById(R.id.textView2);
 
 //        Button register = (Button) findViewById(R.id.register_button);
 //        assert register != null;

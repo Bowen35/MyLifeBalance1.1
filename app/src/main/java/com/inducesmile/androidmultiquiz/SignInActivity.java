@@ -16,7 +16,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance</font>"));
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance | Sign In</font>"));
 
 
         Button register = (Button)findViewById(R.id.register_button);

@@ -33,30 +33,15 @@
                 android:orientation="vertical"
                 android:layout_weight="1">
 
-                <com.github.pavlospt.CircleView
-                    android:id="@+id/pass"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="@dimen/_120sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    app:cv_titleSubtitleSpace="40"
-                    app:cv_fillColor="@color/colorAccent"
-                    app:cv_strokeColorValue="@color/colorPrimaryDark"
-                    app:cv_backgroundColorValue="@color/colorPrimaryDark"
-                    app:cv_titleColor="@color/colorPrimary"
-                    app:cv_titleSize="@dimen/_30sdp"
-                    app:cv_titleText="@string/total_best_score"
-                    app:cv_subtitleSize="@dimen/_14sdp"
-                    app:cv_subtitleText="@string/pass"
-                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
+                    android:id="@+id/resultText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/resultText"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textAlignment="textStart"
                     android:textColor="@color/colorPrimaryText"
-                    android:layout_marginTop="@dimen/_5sdp"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -68,20 +53,37 @@
             android:id="@+id/view_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/icons"
+            android:textColor="@color/pink"
             android:text="@string/view_result"
             android:layout_marginTop="@dimen/_40sdp"
             android:background="@drawable/button_selector"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16sdp"
             android:padding="8dp"/>
 
         <Button
             android:id="@+id/retake_quiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/icons"
+            android:textColor="@color/pink"
             android:text="@string/retake_quiz"
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/button_selector"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16sdp"
             android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnBrowser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_selector"
+            android:letterSpacing="0.1"
+            android:padding="8dp"
+            android:text="@string/website"
+            android:textAllCaps="false"
+            android:textColor="@color/pink"
+            android:textSize="@dimen/_16sdp" />
     </LinearLayout>
 </ScrollView>
