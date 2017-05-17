@@ -3,7 +3,9 @@ package com.inducesmile.androidmultiquiz;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,7 +22,9 @@ public class QuizResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
 
-        setTitle(getString(R.string.quiz_result));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>Quiz Results</font>"));
+        //setTitle(getString(R.string.quiz_result));
 
         final String resultString = getIntent().getExtras().getString("RESULT_OBJECT");
         String userScore = getIntent().getExtras().getString("TOTAL_SCORE");

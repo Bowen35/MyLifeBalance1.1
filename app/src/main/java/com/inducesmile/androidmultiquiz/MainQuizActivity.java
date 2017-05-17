@@ -3,7 +3,9 @@ package com.inducesmile.androidmultiquiz;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -55,7 +57,9 @@ public class MainQuizActivity extends AppCompatActivity {
 
         String categoryName = getIntent().getExtras().getString("QUIZ_CATEGORY_NAME");
         if(!TextUtils.isEmpty(categoryName)){
-            setTitle("Quiz on " + categoryName);
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>"+categoryName+"</font>"));
+            //setTitle(categoryName);
         }
 
         mScore = new ScoreObject();

@@ -2,9 +2,11 @@ package com.inducesmile.androidmultiquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 
 import com.inducesmile.androidmultiquiz.adapters.QuizCategoryAdapter;
 import com.inducesmile.androidmultiquiz.database.DatabaseQuery;
@@ -23,7 +25,9 @@ public class QuizCategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_category);
 
-        setTitle(getString(R.string.quiz_category));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>Quiz Categories</font>"));
+        //setTitle(getString(R.string.quiz_category));
 
         DatabaseQuery dbQuery = new DatabaseQuery(QuizCategoryActivity.this);
         List<CategoryObject> categoryData = dbQuery.getAllQuizCategory();
