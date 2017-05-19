@@ -22,14 +22,10 @@
         </activity>
         <activity android:name=".QuizMenuActivity" />
         <activity android:name=".QuizInstructionActivity" />
-        <activity android:name=".BestScoreActivity" />
         <activity android:name=".QuizCategoryActivity" />
         <activity android:name=".MainQuizActivity" />
         <activity android:name=".QuizResultActivity" />
         <activity android:name=".ResultAnalysisActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".ViewUsers"></activity>

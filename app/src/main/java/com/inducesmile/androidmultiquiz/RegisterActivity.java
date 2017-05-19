@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.database.DatabaseQuery;
@@ -19,8 +20,10 @@ import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText name;
-    private EditText email;
+    private EditText nameET;
+    private EditText emailET;
+    private String name;
+    private String email;
     private MySharedPreference sharedPreference;
     private DBHandler dbh;
     private Client client;
@@ -37,19 +40,25 @@ public class RegisterActivity extends AppCompatActivity {
         dbh = new DBHandler(RegisterActivity.this);
         sharedPreference = new MySharedPreference(RegisterActivity.this);
 
-        name = (EditText) findViewById(R.id.name);
-        email = (EditText) findViewById(R.id.email);
+        nameET = (EditText) findViewById(R.id.name);
+        emailET = (EditText) findViewById(R.id.email);
+        name = nameET.getText().toString();
+        email = emailET.getText().toString();
 
         Button register = (Button) findViewById(R.id.register_button);
         assert register != null;
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                client = new Client(name.getText().toString(), email.getText().toString());
-                dbh.addClient(client);
-                sharedPreference.setSessionState(true);
-                Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-                startActivity(quizMenuIntent);
+                if(name.matches("") || email.matches("")) {
+                    Toast.makeText(RegisterActivity.this, "You must enter both fields.", Toast.LENGTH_LONG).show();
+                } else {
+                    client = new Client(name, email);
+                    dbh.addClient(client);
+                    sharedPreference.setSessionState(true);
+                    Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                    startActivity(quizMenuIntent);
+                }
             }
         });
 
