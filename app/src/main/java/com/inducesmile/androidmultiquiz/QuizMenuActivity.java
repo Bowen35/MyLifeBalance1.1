@@ -63,18 +63,11 @@ public class QuizMenuActivity extends AppCompatActivity {
         Button btnBrowse = (Button) findViewById(R.id.btnBrowser);
         btnBrowse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                List<Client> listClients;
-                DBHandler dbh = new DBHandler(QuizMenuActivity.this);
-                TextView tv = (TextView) findViewById(R.id.textView);
-                listClients = new ArrayList<>();
-                listClients.clear();
-                listClients.addAll(dbh.getAllClient());
-                tv.setText(listClients.get(1).getName().toString());
-//                Uri webpage = Uri.parse("http://eagles.ic1d.net.au/");
-//                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-//                if (intent.resolveActivity(getPackageManager()) != null) {
-//                    startActivity(intent);
-//                }
+                Uri webpage = Uri.parse("http://eagles.ic1d.net.au/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
 

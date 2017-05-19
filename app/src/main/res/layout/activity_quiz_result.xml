@@ -41,7 +41,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:textAlignment="textStart"
                     android:textColor="@color/colorPrimaryText"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 

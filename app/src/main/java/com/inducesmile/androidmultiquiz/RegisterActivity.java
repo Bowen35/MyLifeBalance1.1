@@ -15,13 +15,14 @@ import android.widget.TextView;
 import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.database.DatabaseQuery;
 import com.inducesmile.androidmultiquiz.entities.Client;
+import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText name;
     private EditText email;
-//    private TextView thing;
-    private DBHandler dbh = new DBHandler(RegisterActivity.this);
+    private MySharedPreference sharedPreference;
+    private DBHandler dbh;
     private Client client;
 
     @Override
@@ -33,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance | Register</font>"));
 
+        dbh = new DBHandler(RegisterActivity.this);
+        sharedPreference = new MySharedPreference(RegisterActivity.this);
+
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);
 
@@ -43,8 +47,9 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 client = new Client(name.getText().toString(), email.getText().toString());
                 dbh.addClient(client);
-                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-                startActivity(quizCategoryIntent);
+                sharedPreference.setSessionState(true);
+                Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                startActivity(quizMenuIntent);
             }
         });
 
@@ -53,26 +58,9 @@ public class RegisterActivity extends AppCompatActivity {
         asGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-                startActivity(quizCategoryIntent);
+                Intent quizMenuIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
+                startActivity(quizMenuIntent);
             }
         });
-    }
-
-    public void registerClient(View view){
-//        DBHandler DBhandler = new DBHandler(RegisterActivity.this);
-//        Client client = new Client(name.getText().toString(), email.getText().toString());
-//        //Doesn't work. Can't find clients table.
-//        DBhandler.addClient(client);
-//        Intent quizCategoryIntent = new Intent(RegisterActivity.this, QuizMenuActivity.class);
-//        startActivity(quizCategoryIntent);
-    }
-
-    public void findClients() {
-//        DBHandler dbHandler = new DBHandler(RegisterActivity.this, null, null, 1);
-//        Client client = dbHandler.findAllClients();
-//        if(client != null) {
-//            thing.setText(String.valueOf(client.getEmail()));
-//        }
     }
 }

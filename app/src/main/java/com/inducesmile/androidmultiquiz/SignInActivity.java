@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inducesmile.androidmultiquiz.database.DBHandler;
 import com.inducesmile.androidmultiquiz.entities.Client;
@@ -14,8 +17,10 @@ import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private DBHandler dbh = new DBHandler(SignInActivity.this);
+    private DBHandler dbh;
+    private MySharedPreference sharedPreference;
     private Client client;
+    private AutoCompleteTextView email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,28 +30,35 @@ public class SignInActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance | Sign In</font>"));
 
-        client = new Client("Jeremy", "some@one.com");
-        dbh.addClient(client);
-        MySharedPreference sharedPreference = new MySharedPreference(SignInActivity.this);
-        sharedPreference.setSessionState(true);
+        dbh = new DBHandler(SignInActivity.this);
+        sharedPreference = new MySharedPreference(SignInActivity.this);
 
-//        Button signIn = (Button) findViewById(R.id.sign_in_button);
-//        assert signIn != null;
-//        signIn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                //if email exists then menu
-//                //else toast no email
-//            }
-//        });
+
+        Button signIn = (Button) findViewById(R.id.email_sign_in_button);
+        email = (AutoCompleteTextView) findViewById(R.id.email);
+        assert signIn != null;
+        signIn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if(dbh.checkClient(email.getText().toString())) {
+                    sharedPreference.setSessionState(true);
+                    Intent quizMenuIntent = new Intent(SignInActivity.this, QuizMenuActivity.class);
+                    startActivity(quizMenuIntent);
+                }
+                else {
+                    Toast.makeText(SignInActivity.this, "Email not Registered.", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
 
         Button register = (Button)findViewById(R.id.register_button);
         assert register != null;
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quizCategoryIntent = new Intent(SignInActivity.this, RegisterActivity.class);
-                startActivity(quizCategoryIntent);
+                Intent registerIntent = new Intent(SignInActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
             }
         });
     }

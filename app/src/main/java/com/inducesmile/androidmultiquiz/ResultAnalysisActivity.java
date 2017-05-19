@@ -3,9 +3,11 @@ package com.inducesmile.androidmultiquiz;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +32,9 @@ public class ResultAnalysisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_analysis);
 
-        setTitle(getString(R.string.quiz_result_analysis));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>Quiz Result Analysis</font>"));
+//        setTitle(getString(R.string.quiz_result_analysis));
 
         resultRecyclerView = (RecyclerView)findViewById(R.id.quiz_result_analysis);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ResultAnalysisActivity.this);

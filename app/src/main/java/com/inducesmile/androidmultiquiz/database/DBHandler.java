@@ -104,4 +104,42 @@ public class DBHandler extends SQLiteOpenHelper {
         // return user list
             return clientList;
     }
+
+    public boolean checkClient(String email) {
+
+        // array of columns to fetch
+        String[] columns = {
+                COLUMN_CLIENT_ID
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // selection criteria
+        String selection = COLUMN_CLIENT_EMAIL + " = ?";
+
+        // selection argument
+        String[] selectionArgs = {email};
+
+        // query user table with condition
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
+         */
+        Cursor cursor = db.query(TABLE_CLIENTS, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);                      //The sort order
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0) {
+            return true;
+        }
+
+        return false;
+    }
 }
