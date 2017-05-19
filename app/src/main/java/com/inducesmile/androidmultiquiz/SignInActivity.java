@@ -20,7 +20,8 @@ public class SignInActivity extends AppCompatActivity {
     private DBHandler dbh;
     private MySharedPreference sharedPreference;
     private Client client;
-    private AutoCompleteTextView email;
+    private AutoCompleteTextView emailTV;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,16 @@ public class SignInActivity extends AppCompatActivity {
 
 
         Button signIn = (Button) findViewById(R.id.email_sign_in_button);
-        email = (AutoCompleteTextView) findViewById(R.id.email);
+        emailTV = (AutoCompleteTextView) findViewById(R.id.email);
         assert signIn != null;
         signIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                if(dbh.checkClient(email.getText().toString())) {
+                email = emailTV.getText().toString();
+                if(email.matches("")){
+                    Toast.makeText(SignInActivity.this, "Please enter an email.", Toast.LENGTH_LONG).show();
+                }
+                if(dbh.checkClient(email)) {
                     sharedPreference.setSessionState(true);
                     Intent quizMenuIntent = new Intent(SignInActivity.this, QuizMenuActivity.class);
                     startActivity(quizMenuIntent);
