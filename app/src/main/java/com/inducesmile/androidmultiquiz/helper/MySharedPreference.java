@@ -21,8 +21,18 @@ public class MySharedPreference {
         edits.apply();
     }
 
+    public void setSessionState(Boolean isLoggedIn) {
+        SharedPreferences.Editor edits = prefs.edit();
+        edits.putBoolean(Helper.LOGGED_IN, isLoggedIn);
+        edits.apply();
+    }
+
     public int getCurrentHighestQuizScore(){
         return prefs.getInt(Helper.QUIZ_SCORE, 0);
+    }
+
+    public Boolean isLoggedIn(){
+        return prefs.getBoolean(Helper.LOGGED_IN, false);
     }
 
     public boolean isHighestScore(int newScore){

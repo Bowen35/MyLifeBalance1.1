@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.inducesmile.androidmultiquiz.LoginActivity">
+    tools:context="com.inducesmile.androidmultiquiz.RegisterActivity">
 
     <!-- Login progress -->
 
@@ -40,30 +40,30 @@
                 android:textSize="20sp" />
 
             <!--<android.support.design.widget.TextInputLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
 
-                <!--<AutoCompleteTextView-->
-                    <!--android:id="@+id/name"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="@string/prompt_name"-->
-                    <!--android:inputType="textEmailAddress"-->
-                    <!--android:maxLines="1"/>-->
+            <!--<AutoCompleteTextView-->
+            <!--android:id="@+id/name"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/prompt_name"-->
+            <!--android:inputType="textEmailAddress"-->
+            <!--android:maxLines="1"/>-->
 
             <!--</android.support.design.widget.TextInputLayout>-->
 
             <!--<android.support.design.widget.TextInputLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
-                <!--<AutoCompleteTextView-->
-                    <!--android:id="@+id/email"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="@string/prompt_email"-->
-                    <!--android:inputType="textEmailAddress"-->
-                    <!--android:maxLines="1"/>-->
+            <!--<AutoCompleteTextView-->
+            <!--android:id="@+id/email"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/prompt_email"-->
+            <!--android:inputType="textEmailAddress"-->
+            <!--android:maxLines="1"/>-->
 
             <!--</android.support.design.widget.TextInputLayout>-->
 
@@ -74,7 +74,6 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 android:background="@drawable/button_selector"
                 android:letterSpacing="0.1"
-                android:onClick="registerClient"
                 android:padding="8dp"
                 android:text="@string/register"
                 android:textAllCaps="false"

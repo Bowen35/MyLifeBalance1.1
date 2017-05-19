@@ -8,7 +8,14 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 
+import com.inducesmile.androidmultiquiz.database.DBHandler;
+import com.inducesmile.androidmultiquiz.entities.Client;
+import com.inducesmile.androidmultiquiz.helper.MySharedPreference;
+
 public class SignInActivity extends AppCompatActivity {
+
+    private DBHandler dbh = new DBHandler(SignInActivity.this);
+    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +25,10 @@ public class SignInActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(Html.fromHtml("<font color='#e1c8d6'>My Life Balance | Sign In</font>"));
 
+        client = new Client("Jeremy", "some@one.com");
+        dbh.addClient(client);
+        MySharedPreference sharedPreference = new MySharedPreference(SignInActivity.this);
+        sharedPreference.setSessionState(true);
 
         Button register = (Button)findViewById(R.id.register_button);
         assert register != null;

@@ -65,4 +65,6 @@
     <string name="welcome">Welcome!</string>
     <string name="name_hint">Full Name</string>
     <string name="website">Visit Website</string>
+    <string name="view_users">View All Users</string>
+    <string name="logout">Log Out</string>
 </resources>

@@ -18,4 +18,6 @@ public class Helper {
     public static final String SHARED_PREF = "share_pref";
 
     public static final String QUIZ_SCORE = "quiz_score";
+
+    public static final String LOGGED_IN = "logged_in";
 }

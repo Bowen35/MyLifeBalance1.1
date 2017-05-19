@@ -9,27 +9,34 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.inducesmile.androidmultiquiz.entities.Client;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Sandman on 12/05/2017.
  */
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "quiz";
+    private static final String DATABASE_NAME = "quiz.db";
     private static final int DATABASE_VERSION = 1;
     public static final String TABLE_CLIENTS = "clients";
-    //public static final String COLUMN_ID = "id";
-    public static final String COLUMN_NAME = "name";
-    public static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_CLIENT_ID = "client_id";
+    public static final String COLUMN_CLIENT_NAME = "client_name";
+    public static final String COLUMN_CLIENT_EMAIL = "client_email";
 
-    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    private String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENTS + "("
+            + COLUMN_CLIENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_CLIENT_NAME + " TEXT,"
+            + COLUMN_CLIENT_EMAIL + " TEXT" + ")";
+
+    public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CLIENTS_TABLE = "CREATE TABLE " + TABLE_CLIENTS + " ( " + COLUMN_NAME + " TEXT NOT NULL, " + COLUMN_EMAIL + " INTEGER NOT NULL UNIQUE )";
-        db.execSQL(CREATE_CLIENTS_TABLE);
+        db.execSQL(CREATE_CLIENT_TABLE);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -41,29 +48,60 @@ public class DBHandler extends SQLiteOpenHelper {
         //Create ContentValues Object to hold data
         ContentValues values = new ContentValues();
         //Assign client name to object taken from passed Client object
-        values.put(COLUMN_NAME, client.getName());
+        values.put(COLUMN_CLIENT_NAME, client.getName());
         //Assign email to object taken from passed Client object
-        values.put(COLUMN_EMAIL, client.getEmail());
+        values.put(COLUMN_CLIENT_EMAIL, client.getEmail());
         //Create DB object and assign current object to it
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_CLIENTS, null, values);
         db.close();
     }
+    public List<Client> getAllClient() {
 
-    public Client findAllClients() {
-        String query = "SELECT * FROM " + TABLE_CLIENTS;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Client client = new Client();
-        if(cursor.moveToFirst()) {
-            cursor.moveToFirst();
-            client.setName(cursor.getString(1));
-            client.setEmail(cursor.getString(2));
-            cursor.close();
-        } else {
-            client = null;
+        // array of columns to fetch
+        String[] columns = {
+                COLUMN_CLIENT_ID,
+                COLUMN_CLIENT_NAME,
+                COLUMN_CLIENT_EMAIL
+        };
+        // sorting orders
+    //    String sortOrder =
+    //            COLUMN_USER_NAME + " ASC";
+        List<Client> clientList = new ArrayList<Client>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // query the user table
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
+         */
+        Cursor cursor = db.query(TABLE_CLIENTS, //Table to query
+                columns,    //columns to return
+                null,       //columns for the WHERE clause
+                null,       //The values for the WHERE clause
+                null,       //group the rows
+                null,        //filter by row groups
+                null);    //The sort order
+
+
+        // Traversing through all rows and adding to list
+            if (cursor.moveToFirst()) {
+            do {
+                Client client = new Client();
+                client.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_ID))));
+                client.setName(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_NAME)));
+                client.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_CLIENT_EMAIL)));
+    //            client.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+                // Adding user record to list
+                clientList.add(client);
+            } while (cursor.moveToNext());
         }
-        db.close();
-        return client;
+            cursor.close();
+            db.close();
+
+        // return user list
+            return clientList;
     }
 }
