@@ -67,4 +67,7 @@
     <string name="website">Visit Website</string>
     <string name="view_users">View All Users</string>
     <string name="logout">Log Out</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Name</string>
 </resources>

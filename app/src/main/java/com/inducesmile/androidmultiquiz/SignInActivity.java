@@ -30,6 +30,16 @@ public class SignInActivity extends AppCompatActivity {
         MySharedPreference sharedPreference = new MySharedPreference(SignInActivity.this);
         sharedPreference.setSessionState(true);
 
+//        Button signIn = (Button) findViewById(R.id.sign_in_button);
+//        assert signIn != null;
+//        signIn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                //if email exists then menu
+//                //else toast no email
+//            }
+//        });
+
         Button register = (Button)findViewById(R.id.register_button);
         assert register != null;
         register.setOnClickListener(new View.OnClickListener() {

@@ -116,8 +116,8 @@ public class QuizMenuActivity extends AppCompatActivity {
         viewUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent ViewUserIntent = new Intent(QuizMenuActivity.this, ViewUsers.class);
-//                startActivity(ViewUserIntent);
+                Intent ViewUserIntent = new Intent(QuizMenuActivity.this, ViewUsers.class);
+                startActivity(ViewUserIntent);
             }
         });
 
