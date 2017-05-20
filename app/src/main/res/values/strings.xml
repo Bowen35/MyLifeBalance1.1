@@ -17,7 +17,7 @@
     <string name="fail">FAIL</string>
     <string name="quiz_result">Quiz Result</string>
     <string name="retake_quiz">Quiz Home</string>
-    <string name="view_result">View result</string>
+    <string name="view_result">Check Answer</string>
     <string name="question_num">Question 12</string>
     <string name="your_answer">Your answer</string>
     <string name="correct_answer">Correct answer</string>
@@ -65,7 +65,7 @@
     <string name="welcome">Welcome!</string>
     <string name="name_hint">Full Name</string>
     <string name="website">Visit Website</string>
-    <string name="view_users">View All Users</string>
+    <string name="view_users">View Users</string>
     <string name="logout">Log Out</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>

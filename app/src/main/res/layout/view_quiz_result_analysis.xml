@@ -36,7 +36,7 @@
                 android:contentDescription="@string/app_name"
                 android:layout_gravity="right"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:src="@drawable/goodmark"
+                android:src="@mipmap/ic_launcher"
                 android:layout_weight="1"/>
 
         </LinearLayout>

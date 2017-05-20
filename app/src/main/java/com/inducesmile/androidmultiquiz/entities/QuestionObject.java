@@ -8,13 +8,13 @@ public class QuestionObject {
 
     private String options;
 
-    private String answer;
 
-    public QuestionObject(int id, String question, String options, String answer) {
+
+    public QuestionObject(int id, String question, String options) {
         this.id = id;
         this.question = question;
         this.options = options;
-        this.answer = answer;
+
     }
 
     public int getId() {
@@ -29,21 +29,12 @@ public class QuestionObject {
         return options;
     }
 
-    public String getAnswer() {
-        return answer;
-    }
+
 
     public String[] convertOptionsToStringArray(String options) {
         String[] allOptions = options.split(",");
         return allOptions;
     }
 
-    public boolean isAnswerCorrect(String[] options, String answer) {
-        for (int i = 0; i < options.length; i++) {
-            if (options[i].equals(answer)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
