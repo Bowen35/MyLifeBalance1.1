@@ -40,16 +40,17 @@ public class RegisterActivity extends AppCompatActivity {
         dbh = new DBHandler(RegisterActivity.this);
         sharedPreference = new MySharedPreference(RegisterActivity.this);
 
-        nameET = (EditText) findViewById(R.id.name);
-        emailET = (EditText) findViewById(R.id.email);
-        name = nameET.getText().toString();
-        email = emailET.getText().toString();
+
 
         Button register = (Button) findViewById(R.id.register_button);
         assert register != null;
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                nameET = (EditText) findViewById(R.id.name);
+                emailET = (EditText) findViewById(R.id.email);
+                name = nameET.getText().toString();
+                email = emailET.getText().toString();
                 if(name.matches("") || email.matches("")) {
                     Toast.makeText(RegisterActivity.this, "You must enter both fields.", Toast.LENGTH_LONG).show();
                 } else {
