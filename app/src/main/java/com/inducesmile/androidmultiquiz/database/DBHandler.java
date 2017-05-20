@@ -30,6 +30,7 @@ public class DBHandler extends SQLiteOpenHelper {
             + COLUMN_CLIENT_NAME + " TEXT,"
             + COLUMN_CLIENT_EMAIL + " TEXT" + ")";
 
+
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
