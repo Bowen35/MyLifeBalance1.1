@@ -15,9 +15,6 @@ import java.util.List;
 
 public class DatabaseQuery extends DatabaseObject{
 
-    public static final String TABLE_CLIENTS = "clients";
-    public static final String COLUMN_NAME = "name";
-    public static final String COLUMN_EMAIL = "email";
 
     public DatabaseQuery(Context context) {
         super(context);
