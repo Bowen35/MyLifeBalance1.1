@@ -44,8 +44,9 @@ public class SignInActivity extends AppCompatActivity {
                 email = emailTV.getText().toString();
                 if(email.matches("")){
                     Toast.makeText(SignInActivity.this, "Please enter an email.", Toast.LENGTH_LONG).show();
+
                 }
-                if(dbh.checkClient(email)) {
+                else if(dbh.checkClient(email)) {
                     sharedPreference.setSessionState(true);
                     Intent quizMenuIntent = new Intent(SignInActivity.this, QuizMenuActivity.class);
                     startActivity(quizMenuIntent);
